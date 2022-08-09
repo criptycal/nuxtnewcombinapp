@@ -1,15 +1,15 @@
  import {Router} from 'express';
 const router = Router();
-import { getPayables, postPayables, getPayableByBarcode, getPayableByTipoServicio } from '@/server/controllers/payable'
+import { getPayables, postPayables, getPayableByBarcode, getPayableByTipoServicio } from '../controllers/payable'
 
 /* GET payables */
 router.get('/payables', getPayables)
-/* GET payables/:barcode */
-      .get('/payables/:barcode', getPayableByBarcode)
-/* GET payables/:servicio */
-      .get('/payables/:servicio', getPayableByTipoServicio)
+/* GET payables/barcodes/:barcode */
+      .get('/payables/barcodes/:barcode', getPayableByBarcode)
+/* GET payables/services/:typeservice */
+      .get('/payables/services/:typeservice', getPayableByTipoServicio)
 
-/* POST payable */
+/* POST payables */
       .post('/payables', postPayables);
 
 

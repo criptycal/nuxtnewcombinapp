@@ -87,19 +87,26 @@ export const getPayableByTipoServicio = async (req: any, res: any, next: any) =>
     try {
         const {typeservice} = req.params;
         const payable = await Payables.find({tipoServicio: typeservice});
+        if(!payable) {
+            return res.status(404).json({message: 'No hay balotas con ese tipo de servicio'});
+        }
         res.json(payable);
     } catch (error) {
+        
         console.log(error);
     }
 }
 
 /*
-    @route   GET api/payables/:id
+    @route   GET api/payables/barcodes/:barcode
 */
 export const getPayableByBarcode = async (req: any, res: any, next: any) => {
     try {
         const {barcode} = req.params;
         const payable = await Payables.find({barcode: barcode});
+        if(!payable) {
+            return res.status(404).json({message: 'No hay balotas con ese codigo de barras'});
+        }
         res.json(payable);
     } catch (error) {
         console.log(error);

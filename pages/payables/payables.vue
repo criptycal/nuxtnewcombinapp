@@ -1,13 +1,12 @@
 <script lang="ts" setup>
-  useHead({
-    title: 'Listar Boletas | NewCombinChallenge',
-  })
+
+
 </script>
 
 <template>
-  <div>
-    
-  </div>
+
+    <PayablesList />
+  
 </template>
 
 <style scoped></style>
