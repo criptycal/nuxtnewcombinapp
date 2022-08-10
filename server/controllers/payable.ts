@@ -33,7 +33,7 @@ export const postPayables = async (req: any, res: any, next: any) => {
 */
 export const getPayables = async (req: any, res: any, next: any) => {
     try {
-        const payables = await Payables.find();
+        const payables = await Payables.find({paymentStatus: 'Pendiente'});
         res.json(payables);
     } catch (error) {
         console.log(error);
@@ -86,7 +86,7 @@ export const deletePayable = async (req: any, res: any, next: any) => {
 export const getPayableByTipoServicio = async (req: any, res: any, next: any) => {
     try {
         const {typeservice} = req.params;
-        const payable = await Payables.find({tipoServicio: typeservice});
+        const payable = await Payables.find({tipoServicio: typeservice, paymentStatus: 'Pendiente'});
         if(!payable) {
             return res.status(404).json({message: 'No hay balotas con ese tipo de servicio'});
         }

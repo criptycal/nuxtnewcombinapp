@@ -56,6 +56,7 @@
           } 
 
           if(this.transaction.paymentMethod === 'Cash'){
+            this.transaction.cardNumber = 0;
             if(this.transaction.paymentAmount && this.transaction.paymentDate && this.transaction.barcode){
               //this.isValid = true;
               this.saveTransaction(this.transaction);
@@ -71,6 +72,7 @@
           this.paymentDateClass = '';
           this.barcodeClass = '';
           try {
+            
             const res = await postTransactions(transaction);
             if(res.status === 201){
               this.isValid = true;

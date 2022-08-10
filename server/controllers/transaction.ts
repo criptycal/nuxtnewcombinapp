@@ -71,3 +71,15 @@ export const getTransactionByPaymentDate = async (req: any, res: any, next: any)
         console.log(error);
     }
 }
+
+/*
+    @route   GET api/transactions/paymentdates/:paymentdates
+*/
+export const getTransactionByPaymentDates = async (req: any, res: any, next: any) => {
+    try {
+        const transaction = await Transaction.find({paymentDate: {$gte: req.params.paymentdates, $lte: req.params.paymentdatess}});
+        return res.json(transaction);
+    } catch (error) {
+        console.log(error);
+    }
+}

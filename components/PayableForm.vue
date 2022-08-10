@@ -27,6 +27,7 @@
                 this.payableNotSaved = false;
                 this.barcodeMsg = '';
                 try {
+                    
                     const res = await postPayables(this.payable);
                     if(res.status === 201) {
                         this.payableSaved = true;
