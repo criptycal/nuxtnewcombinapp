@@ -2,6 +2,16 @@
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
+## ENV VARIABLE (IMPORTANT)
+
+In the root folder create a file named .env, and paste inside this ENV VARIABLE
+
+```bash
+# database env variable
+PASS=NewCombinPass
+
+```
+
 ## Setup
 
 Make sure to install the dependencies:
