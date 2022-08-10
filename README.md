@@ -1,5 +1,5 @@
-# Nuxt 3 Minimal Starter
-
+# NewCombin Technical Challenge
+Created with MongoDB, Express, Vue.js, NodeJS y TypeScript
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## ENV VARIABLE (IMPORTANT)
